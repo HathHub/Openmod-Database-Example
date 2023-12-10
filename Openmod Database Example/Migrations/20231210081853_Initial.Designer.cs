@@ -8,7 +8,7 @@ using OpenmodDatabaseExample.Databases;
 namespace OpenmodDatabaseExample.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231209231522_Initial")]
+    [Migration("20231210081853_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,7 @@ namespace OpenmodDatabaseExample.Migrations
 
                     b.HasKey("SteamID");
 
-                    b.ToTable("OpenmodDatabaseExample_Servers");
+                    b.ToTable("OpenmodDatabaseExample_Players");
                 });
 #pragma warning restore 612, 618
         }

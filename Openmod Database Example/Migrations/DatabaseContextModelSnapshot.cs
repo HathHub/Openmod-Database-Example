@@ -24,7 +24,7 @@ namespace OpenmodDatabaseExample.Migrations
 
                     b.HasKey("SteamID");
 
-                    b.ToTable("OpenmodDatabaseExample_Servers");
+                    b.ToTable("OpenmodDatabaseExample_Players");
                 });
 #pragma warning restore 612, 618
         }
