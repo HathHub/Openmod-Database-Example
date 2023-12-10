@@ -60,7 +60,7 @@ protected override async UniTask OnLoadAsync()
         m_Logger.LogInformation(retrievedPlayer.ToJson().ToString());
     }
 }
-
+```
 
 # Notes
 
@@ -72,4 +72,4 @@ protected override async UniTask OnLoadAsync()
 
 - Customize this example to fit the specific needs of your plugin.
 
-- For more information, refer to the [official OpenMod documentation](https://openmod.github.io/openmod-docs/devdoc/guides/getting-started.html).
+- For more information, refer to the [official OpenMod documentation](https://openmod.github.io/openmod-docs/devdoc/concepts/databases.html).
