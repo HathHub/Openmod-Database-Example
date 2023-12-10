@@ -13,7 +13,7 @@ This is a simple example of using the OpenMod Entity Framework for database oper
     - No additional configuration is needed for this example.
 
 4. **Database Setup:**
-    - Ensure you have a database configured according to the connection string in your `appsettings.json` or equivalent configuration file.
+    - Ensure you have a database configured according to the connection string in your `config.yaml`.
   
 # Config.yaml
 
