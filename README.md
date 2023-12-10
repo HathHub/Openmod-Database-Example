@@ -14,6 +14,23 @@ This is a simple example of using the OpenMod Entity Framework for database oper
 
 4. **Database Setup:**
     - Ensure you have a database configured according to the connection string in your `appsettings.json` or equivalent configuration file.
+  
+# Config.yaml
+
+## Default MySQL Connection
+
+By default, OpenMod retrieves the connection string for your MySQL database from the `config.yaml` file. Ensure that the following configuration is present in your `config.yaml`:
+
+```yaml
+database:
+  ConnectionStrings:
+    default: "Server=127.0.0.1; Database=openmod; Port=3306; User=root; Password=toor;"
+```
+
+Adjust the values in the connection string according to your MySQL database configuration. This ensures that OpenMod can establish a connection to your MySQL database when the plugin is loaded.
+
+For more details on OpenMod configuration, refer to the [official documentation](https://openmod.github.io/openmod-docs/devdoc/guides/getting-started.html#configuring-openmod).
+
 
 ## Usage Example
 
