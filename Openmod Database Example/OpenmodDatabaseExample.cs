@@ -11,6 +11,7 @@ using OpenMod.API.Plugins;
 using OpenMod.Unturned.Plugins;
 using OpenmodDatabaseExample.Databases;
 using OpenmodDatabaseExample.Models.Players;
+using SDG.Unturned;
 
 // For more, visit https://openmod.github.io/openmod-docs/devdoc/guides/getting-started.html
 
@@ -39,7 +40,6 @@ namespace OpenmodDatabaseExample
 
         protected override async UniTask OnLoadAsync()
         {
-            // await UniTask.SwitchToMainThread(); uncomment if you have to access Unturned or UnityEngine APIs
             m_Logger.LogInformation("Hello World!");
             await using var dbContext = m_ServiceProvider.GetRequiredService<DatabaseContext>();
             await dbContext.Database.MigrateAsync();
@@ -64,7 +64,10 @@ namespace OpenmodDatabaseExample
 
         protected override async UniTask OnUnloadAsync()
         {
-            // await UniTask.SwitchToMainThread(); uncomment if you have to access Unturned or UnityEngine APIs
+            // await UniTask.SwitchToMainThread();
+            await UniTask.SwitchToMainThread();
+            await UniTask.SwitchToTaskPool();
+            await UniTask.SwitchToThreadPool();
             m_Logger.LogInformation(m_StringLocalizer["plugin_events:plugin_stop"]);
         }
     }
