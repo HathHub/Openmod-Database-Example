@@ -6,11 +6,12 @@ using Microsoft.Extensions.Logging;
 using OpenMod.API.Plugins;
 using OpenMod.EntityFrameworkCore.MySql.Extensions;
 using OpenMod.Unturned.Plugins;
-using OpenmodDatabaseExample.Databases;
+using PlayerStats.Commands;
+using PlayerStats.Databases;
 
 // For more, visit https://openmod.github.io/openmod-docs/devdoc/guides/getting-started.html
 
-namespace OpenmodDatabaseExample
+namespace PlayerStats.PluginConfigurator
 {
     public class PluginContainerConfigurator : IPluginContainerConfigurator
     {

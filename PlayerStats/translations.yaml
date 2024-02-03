@@ -1,0 +1,4 @@
+
+plugin_events:
+  plugin_start: "Hello World"
+  plugin_stop: "Good bye :("

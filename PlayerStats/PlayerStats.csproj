@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>openmod openmod-plugin unturned</PackageTags>
-    <RootNamespace>OpenmodDatabaseExample</RootNamespace>
-	  <AssemblyName>OpenmodDatabaseExample</AssemblyName>
+    <RootNamespace>PlayerStats</RootNamespace>
+	  <AssemblyName>PlayerStats</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateNugetPackage>true</GenerateNugetPackage>
-    <Product>My OpenMod Plugin</Product>
+    <Product>Player Stats</Product>
     <Nullable>enable</Nullable>
     <WarningsAsErrors>nullable</WarningsAsErrors>
 	  <LangVersion>latest</LangVersion>
@@ -23,7 +23,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="OpenMod.EntityFrameworkCore" Version="3.7.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="OpenMod.EntityFrameworkCore.MySql" Version="3.7.4" />
     <PackageReference Include="OpenMod.Unturned" Version="3.7.4+6bfe3e6f" />
     <PackageReference Include="Legacy2CPSWorkaround" Version="1.0.0">
@@ -48,6 +51,10 @@
   <Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
     <ItemGroup>
     </ItemGroup>
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\U3DS\Servers\Default\OpenMod\plugins&quot;" />
   </Target>
 
 </Project>
