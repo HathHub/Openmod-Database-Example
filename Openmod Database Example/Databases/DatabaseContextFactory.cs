@@ -4,7 +4,7 @@
 
 // For more, visit https://openmod.github.io/openmod-docs/devdoc/guides/getting-started.html
 
-namespace PlayerStats.Databases
+namespace OpenmodDatabaseExample.Databases
 {
     public class DatabaseContextFactory : OpenModMySqlDbContextFactory<DatabaseContext>
     {
